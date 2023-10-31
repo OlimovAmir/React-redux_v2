@@ -7,7 +7,7 @@ function Likes(props) {
   return (
     <div className='custom-button'>
       <button onClick={props.onIncrimentLikes} className='button-like'> &#10084; {props.likes}</button>
-      <button className='button-dislike'> dislike </button>
+      <button onClick={props.onDecrimentLikes} className='button-dislike'> dislike </button>
     </div>
   )
 }
@@ -22,10 +22,16 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     onIncrimentLikes: () => {
-      console.log('click 1');
+      console.log('Incriment');
       const action = {type: 'INCREMENT'};
       dispatch(action);
+    },
+    onDecrimentLikes: () => {
+      console.log('Decriment');
+      const action = {type: 'DECREMENT'};
+      dispatch(action);
     }
+
   }
 }
 
