@@ -1,6 +1,7 @@
 import React from 'react';
 import '../App';
 import { connect } from 'react-redux';
+import { likeReducer } from './../redux/likeReducer';
 
 function Likes(props) {
   console.log(props)
@@ -14,8 +15,9 @@ function Likes(props) {
 
 function mapStateToProps(state) {
   console.log('mapStateToProps', state);
+  const {likeReducer} = state
   return {
-    likes: state.likes
+    likes: likeReducer.likes
   }
 }
 
