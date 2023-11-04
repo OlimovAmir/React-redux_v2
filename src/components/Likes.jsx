@@ -5,7 +5,7 @@ import { likeReducer } from './../redux/likeReducer';
 import { incrementLikes, decrementLikes } from '../redux/actions'; 
 
 function Likes(props) {
-  console.log(props)
+  
   return (
     <div className='custom-button'>
       <button onClick={props.onIncrimentLikes} className='button-like'> &#10084; {props.likes}</button>
@@ -15,7 +15,7 @@ function Likes(props) {
 }
 
 function mapStateToProps(state) {
-  console.log('mapStateToProps', state);
+  
   const {likeReducer} = state
   return {
     likes: likeReducer.likes

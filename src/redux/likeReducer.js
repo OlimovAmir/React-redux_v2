@@ -4,7 +4,7 @@ const initialState = {
 }
 
 export const likeReducer = (state = initialState, action) => {
-    console.log('reducer > ', action);
+    
     switch (action.type) {
         case INCREMENT:
             return {
