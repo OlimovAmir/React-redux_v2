@@ -2,6 +2,7 @@ import './App.css';
 import Likes from './components/Likes';
 import Title from './components/Title';
 import fotoMoto from './img/Мото 6.jpg'
+import Comments from './components/Comments';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
             <Title/>
             <Likes/>
           </div>
+          <Comments/>
         </div>
         
       </div>

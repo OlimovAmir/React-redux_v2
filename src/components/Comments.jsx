@@ -1,4 +1,5 @@
 import React from 'react'
+import SingleComments from './SingleComments'
 
 function Comments(props) {
 
@@ -9,7 +10,7 @@ function Comments(props) {
             <input type="text" />
             <input type="submit" hidden/>
         </form>
-        
+        <SingleComments/>
 
     </div>
   )
