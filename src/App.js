@@ -5,6 +5,8 @@ import fotoMoto from './img/Мото 6.jpg'
 import Comments from './components/Comments';
 
 
+
+
 function App() {
   return (
     <div className="App">
@@ -15,7 +17,10 @@ function App() {
             <Title/>
             <Likes/>
           </div>
-          <Comments/>
+          <div className='test'>
+          <Comments className=''/>
+          </div>
+          
         </div>
         
       </div>
