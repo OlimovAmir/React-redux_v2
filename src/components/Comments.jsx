@@ -10,7 +10,7 @@ function Comments(props) {
   const [textComment, setTextComment] = useState('');
   //console.log('comments: ', props)
   const comments = useSelector(state => {
-    console.log('redux state: ', state)
+    //console.log('redux state: ', state)
     const {commentsReducer} = state;
     return commentsReducer.comments 
   });
@@ -38,7 +38,10 @@ function Comments(props) {
         />
         <input type="submit" hidden />
       </form>
-      <SingleComments />
+      {!!comments.length && comments.map(res =>{
+        return <SingleComments key={res.id} data={res} />
+      })}
+      
     </div>
   )
 }
