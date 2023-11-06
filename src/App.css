@@ -51,4 +51,11 @@ button {
 
 .close {
   cursor: pointer;
+  padding: 5px;
+}
+
+.formSingleComments {
+  display: flex;
+  padding: 5px;
+
 }

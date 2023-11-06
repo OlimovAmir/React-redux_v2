@@ -1,21 +1,39 @@
 import React, { useEffect, useState } from 'react'
+import '../App';
+import { useDispatch } from 'react-redux';
+import { commentUpdate } from '../redux/actions';
 
-function SingleComments({data}) {
+
+function SingleComments({ data }) {
   const [commentsText, setCommentText] = useState('');
-  const {text, id} = data;
-  useEffect(()=>{
+  const { text, id } = data;
+  useEffect(() => {
     if (text) {
       setCommentText(text);
     }
-  },[text]);
-   
+  }, [text]);
+  const dispatch = useDispatch();
+  const handleInput = (e) => {
+    setCommentText(e.target.value);
+  }
+
+  const handleUpdate = (e) => {
+    e.preventDefault();
+    console.log('text Update --> ', commentsText )
+    dispatch(commentUpdate(commentsText, id))
+
+  }
+
   return (
     <div className=''>
-    <div className='close' >&times;</div>
-        <form className=''>
-            <input type='text' value={commentsText}/>
-            <input type='submit' hidden/>
-        </form>
+      
+      <form onSubmit={handleUpdate} className='formSingleComments'>
+        <div className='close'>
+          &times;
+        </div>
+        <input type='text' value={commentsText} onChange={handleInput} />
+        <input type='submit' hidden />
+      </form>
     </div>
   )
 }

@@ -14,7 +14,7 @@ function App() {
         <div className='card'>
           <div className='card-image'>
             <img src={fotoMoto} alt='foto' />
-            <Title/>
+            
             <Likes/>
           </div>
           <div className='test'>

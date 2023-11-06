@@ -25,9 +25,10 @@ function Comments(props) {
     e.preventDefault();
     dispatch(commentCreate(textComment, id))
     console.log('submit text comment', textComment)
+    setTextComment('');
 
   }
-
+  
   return (
     <div className='card-comments'>
       <form className='comments-item-create' onSubmit={handleSubmit}>
