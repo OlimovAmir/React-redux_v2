@@ -1,5 +1,6 @@
 import {
     COMMENT_CREATE,
+    COMMENT_DELETE,
     COMMENT_UPDATE,
 } from './type';
 const initialState = {
@@ -29,6 +30,23 @@ export const commentsReducer = (state = initialState, action) => {
                 comments: nextComments,
                 //comments: [...state.comments, action.data]
             }
+            case COMMENT_DELETE:
+                return (()=>{
+                    const {data} = action; // это новый обновлённый коментарий
+                    const {comments} = state; // коментарий который сейчас храняться в state
+                    const itemIndex = comments.findIndex(res=> res.id === data.id);
+                    const nextComments = [
+                        ...comments.slice(0, itemIndex),
+                        data,
+                        ...comments.slice(itemIndex + 1)
+                    ];
+                    return {
+                        ...state,
+                        comments: nextComments,
+                        //comments: [...state.comments, action.data]
+                    }
+                })
+            
         default:
             return state;
     }
